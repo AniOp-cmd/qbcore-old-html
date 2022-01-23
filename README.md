@@ -4,10 +4,6 @@ Old qbcore notify HTML
 
 And look for the following code.)
 
-RegisterNUICallback('getNotifyConfig', function(_, cb)
-    cb(QBCore.Config.Notify)
-end)
-
 function QBCore.Functions.Notify(text, textype, length)
     if type(text) == "table" then
         local ttext = text.text or 'Placeholder'
@@ -35,9 +31,6 @@ end
 
 (And replace it with the following.)
 
-RegisterNUICallback('getNotifyConfig', function(_, cb)
-    cb(QBCore.Config.Notify)
-end)
 
 QBCore.Functions.Notify = function(text, textype, length)
     local ttype = textype ~= nil and textype or "primary"
